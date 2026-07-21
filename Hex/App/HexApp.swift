@@ -19,6 +19,8 @@ struct HexApp: App {
                 appDelegate.presentSettingsView()
             }.keyboardShortcut(",")
 
+			UpstreamCheckButton()
+
 			Divider()
 			
 			Button("Quit Hex") {
@@ -45,5 +47,10 @@ struct HexApp: App {
 
 			CommandGroup(replacing: .help) {}
 		}
+
+		Window("Upstream Updates", id: UpstreamCheckWindow.id) {
+			UpstreamCheckView()
+		}
+		.windowResizability(.contentSize)
 	}
 }
