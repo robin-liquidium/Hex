@@ -36,6 +36,15 @@ public extension URL {
 		}
 	}
 
+	/// Cache root used by MLX Audio models downloaded from Hugging Face.
+	static var hexMLXModelsDirectory: URL {
+		get throws {
+			let directory = try hexModelsDirectory.appendingPathComponent("mlx", isDirectory: true)
+			try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true)
+			return directory
+		}
+	}
+
 	/// Where FluidAudio (Parakeet) keeps its on-disk model caches.
 	///
 	/// FluidAudio writes to `<Application Support>/FluidAudio/Models/<variant>` in

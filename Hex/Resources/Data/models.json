@@ -16,6 +16,22 @@
     "storageSize": "650MB"
   },
   {
+    "displayName": "Qwen3-ASR 0.6B (MLX 8-bit)",
+    "internalName": "mlx-community/Qwen3-ASR-0.6B-8bit",
+    "size": "Multilingual",
+    "accuracyStars": 4,
+    "speedStars": 4,
+    "storageSize": "1.0GB"
+  },
+  {
+    "displayName": "Qwen3-ASR 1.7B (MLX 8-bit)",
+    "internalName": "mlx-community/Qwen3-ASR-1.7B-8bit",
+    "size": "Multilingual",
+    "accuracyStars": 5,
+    "speedStars": 3,
+    "storageSize": "2.5GB"
+  },
+  {
     "displayName": "Whisper Tiny",
     "internalName": "openai_whisper-tiny",
     "size": "Multilingual",

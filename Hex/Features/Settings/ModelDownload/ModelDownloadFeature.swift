@@ -502,10 +502,16 @@ public struct ModelDownloadFeature {
 		// don't end up staring at an empty WhisperKit folder thinking the
 		// Parakeet download silently failed.
 		let usesParakeetRoot = ParakeetModel(rawValue: model) != nil
+		let usesMLXRoot = QwenModel(rawValue: model) != nil
 		return .run { _ in
-			let base = try usesParakeetRoot
-				? URL.hexParakeetModelsDirectory
-				: URL.hexModelsDirectory
+			let base: URL
+			if usesParakeetRoot {
+				base = try URL.hexParakeetModelsDirectory
+			} else if usesMLXRoot {
+				base = try URL.hexMLXModelsDirectory
+			} else {
+				base = try URL.hexModelsDirectory
+			}
 			NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: base.path)
 		}
 	}
